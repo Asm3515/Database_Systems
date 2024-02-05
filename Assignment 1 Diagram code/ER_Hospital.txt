@@ -1,0 +1,85 @@
+Patient
+MRN:oval
+Name:oval
+Patient--MRN
+Patient--Name
+Admit:diamond
+Refer:diamond
+Attends:diamond
+Occupy:diamond
+
+
+
+
+Physician
+Physician ID:oval
+Phy_Name:oval
+Physician--Physician ID
+Physician--Phy_Name
+
+
+Nurse
+Employee Number:oval
+Nur_Name:oval
+Nurse--Employee Number
+Nurse--Nur_Name
+
+
+
+
+
+
+Diagnosis
+Diagnosis Code:oval
+Diagnosis ID:oval
+Diagnosis Name:oval
+Diagnosis--Diagnosis Code
+Diagnosis--Diagnosis Name
+Diagnosis--Diagnosis ID
+
+
+Bed
+Bed Number:oval
+Room Number:oval
+Bed--Bed Number
+Bed--Room Number
+
+
+
+
+Order
+Order Date:oval
+Order Time:oval
+Order ID:oval
+Order--Order Date
+Order--Order ID
+Order--Order Time
+
+
+
+
+Treatment
+Treatment ID:oval
+Treatment Code:oval
+Treatment Name:oval
+Treatment--Treatment Code
+Treatment--Treatment ID
+Treatment--Treatment Name
+
+
+
+
+
+
+
+
+// connections
+
+
+Patient-1..-Admit-0..M-Physician
+Patient-1..-Refer-0..M-Physician
+Patient-1..-Attends-0..M-Nurse
+Patient-1..M-Diagnosis
+Patient-0..1-Occupy-0..1-Bed
+Physician-0..1-Order
+Order-0.1-Treatment

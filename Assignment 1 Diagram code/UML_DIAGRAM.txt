@@ -1,0 +1,46 @@
+
+User 
+	- UserID: int
+	- Name: string
+	- Address : string
+
+
+song
+	- Title: string
+	- Year : int
+	- Length : int
+	- Genre : string
+	+ getDetails()  string
+	+ isSingle()  boolean
+
+Artist
+	- DateOfBirth: date
+	- Name: string
+	- URL: string
+	+ createProfile(): void
+	+ getBio(): string
+	+ listSongs(): string
+
+BusinessUser 
+	- UserID: int
+	- VATNumber: string
+	+ registerBusiness(): void
+	+ getUploadedSongs(): string
+
+
+RegularUser 
+	+ UserID: int
+	+ createAlbum(): void
+	+ recommendAlbum(): void
+
+
+
+
+
+song{*}-{Compose}-{1}Artist
+BusinessUser --*> User
+RegularUser  --*> User
+
+song{*}--{*}User 
+song{*}--{1}BusinessUser
+song{*}--{1}RegularUser
